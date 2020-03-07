@@ -1,44 +1,43 @@
 const letterPositions = function (sentence) {
   const results = {};
-
   for (let item = 0; item < sentence.length; item++) {
     const key = sentence[item];
     if (key !== ' ') {
       if (results[key] === undefined) {
-        results[key] = []
+        results[key] = [];
       }
       results[key].push(item)
     }
   }
-  //   results[key] = [item]
-  //     if (results[key].length > 0) {
-  //     results[key].push(item)
-  //   }
-  // 
-
-
-  // for (const item of sentence.split(" ").join("")) {
-
-
-  //     if (results[item]) {
-  //       results[item] += 1;
-
-  //     }
-  // }
-
-
   return results;
 };
-//console.log(letterPositions("lighthouse in the house"));
-
-const assertEqual = function(actual, expected) {
-  if (actual === expected) {
-    return console.log(`✅✅✅Assertion Passed: ${actual} === ${expected}`);
+console.log(letterPositions("hello"));
+// TEST CODE
+const eqArrays = function (actual, expected) {
+  let output = true;
+  if (actual.length === expected.length) {
+    for (let i = 0; i < actual.length; i++) {
+      if (actual[i] !== expected[i]) {
+        output = false;
+      }
+    }
+  }
+  else {
+    output = false;
+  }
+  return output;
+};
+const assertArraysEqual = function (array1, array2) {
+  if (eqArrays(array1, array2) === true) {
+    return console.log(`✅✅✅Assertion Passed: ${array1} === ${array2}`);
   } else {
-    return console.log(`🛑🛑🛑Assertion Failed: ${actual} !== ${expected}`);
+    return console.log(`🛑🛑🛑Assertion Failed: ${array1} !== ${array2}`);
   }
 };
-let test = letterPositions("sentence");
-console.log(test.e)
-// TEST CODE
-assertEqual(test.e[2], 7 );
+assertArraysEqual(letterPositions("hello").o, [4]);
+assertArraysEqual(letterPositions("hello").h, [0]);
+assertArraysEqual(letterPositions("hello").l, [2,3]);
+assertArraysEqual(letterPositions("hello").e, [1]);
+
+
+
