@@ -1,18 +1,18 @@
-//const assertArraysEqual = require('./assertArraysEqual.js');
+const assertArraysEqual = require('./assertArraysEqual.js');
 
-//const flatten = function(input) {
-  //return input.flat()
-const input = [1, 2, [3, 4], 5, [6]]
-console.log(input.reduce((input, val) => input.concat(val), []));
-  //console.log(input)
-  //let newArray = [];
-  // for (let element in input) {
-  //   if (Array.isArray(element) === true) {
-  //     console.log(input[element])
-  //   }
-  // }
-  //console.log(newArray)
-//};
+const flatten = function (input) {
+  let arrConcat = [];
+  for (let element of input) {
+    if (Array.isArray(element) === true) {
+      arrConcat.push(...element)
+    } else {
+      arrConcat.push(element)
+    }
+  }
+  return arrConcat
+};
 
+//console.log(input.reduce((input, val) => input.concat(val), []));//second option to fullfil this task
 
-//console.log(flatten([1, 2, [3, 4], 5, [6]])); // => [1, 2, 3, 4, 5, 6]
+flatten([1, 2, [3, 4], 5, ["hi"]]); // => [1, 2, 3, 4, 5, 6]
+assertArraysEqual(flatten(["hello", "world", ["lighthouse"]]), ["hello", "world", "lighthouse"]);
