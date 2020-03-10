@@ -1,0 +1,24 @@
+{
+  "name": "@billimorgan/lotide",
+  "version": "1.0.0",
+  "description": "lotide project",
+  "main": "assertArraysEqual.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BilliMorgan/lotide.git"
+  },
+  "author": {"name" : "Andrii Shymko",
+  "email" : "shimko20@gmail.com"
+  },
+  "license" : "ISC",
+  "bugs": {
+    "url": "https://github.com/BilliMorgan/lotide/issues"
+  },
+  "homepage": "https://github.com/BilliMorgan/lotide#readme"
+}

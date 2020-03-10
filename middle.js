@@ -12,4 +12,7 @@ const middle = function(array) {
   }
   return middle;
 };
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8,]), [4, 5]);       // pass
+
+module.exports = middle;
+
+// assertArraysEqual(middle([1, 2, 3, 4, 5, 6, 7, 8,]), [4, 5]);       // pass
